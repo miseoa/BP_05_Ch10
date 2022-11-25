@@ -119,7 +119,7 @@ window.mainloop()
 4번
 def changedInch():
     inch=int(e.get())
-    centi=inch*2.54
+    centi=inch*2.54 # 인치 -> 센티미터
     forthLabel.configure(text=str(centi)+"센티미터")
 
     
