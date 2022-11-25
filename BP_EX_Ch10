@@ -14,25 +14,25 @@ lastBtn.pack()
 window.mainloop()
 
 2번
-def plus():
+def plus(): #더하기 함수 정의
     global total
     total+=int(e.get())
     display()
 
     
-def minus():
+def minus(): #빼기 함수 정의
     global total
     total-= int(e.get())
     display()
 
     
-def reset():
+def reset(): #초기화 함수 정의
     global total
     total=100
     display()
 
     
-def display():
+def display(): 
     global secondLabel
     secondLabel.destroy()
     secondLabel=Label(window,text=total)
@@ -44,7 +44,7 @@ from tkinter import*
 total=100
 
 window=Tk()
-firstLabel=Label(window,text="현재 합계:")
+firstLabel=Label(window,text="현재 합계:") #-------상단 라벨 생성--------------
 secondLabel=Label(window,text=total)
 
 firstLabel.grid(row=0,column=0)
@@ -53,7 +53,7 @@ secondLabel.grid(row=0,column=1)
 e=Entry(window)
 e.grid(row=1,column=0,columnspan=3)
 
-plusBtn=Button(window,text="더하기(+)",command=plus)
+plusBtn=Button(window,text="더하기(+)",command=plus) #-------하단 버튼 생성------------
 minusBtn=Button(window,text="빼기(-)",command=minus)
 resetBtn=Button(window,text="초기화",command=reset)
 
@@ -76,7 +76,7 @@ def run():
     global betNum
 
     
-    num=int(e.get())
+    num=int(e.get()) #게임 룰 함수 정의
 def run():
     global num
     global betNum
@@ -89,7 +89,7 @@ def run():
         firstLabel['text']="정답입니다!"
 
         
-def reset():
+def reset(): #초기화 함수 정의
     global num
     global betNum
     e.delete(0,END)
@@ -98,7 +98,7 @@ def reset():
     num=0
 
     
-firstLabel=Label(window,text="1에서 100사이의 수를 입력하시오.")
+firstLabel=Label(window,text="1에서 100사이의 수를 입력하시오.") #-------상단 라벨 생성--------------
 secondLabel=Label(window,)
 thirdLabel=Label(window,)
 firstlabel.grid(row=1, column=0, columnspan=2)
@@ -108,7 +108,7 @@ thirdLabel.grid(row=4, column=0, columnspan=2)
 e=Entry(window)
 e.grid(row=3, column=0, columnspan=2)
 
-firstBtn=Button(window, text="숫자를 입력", command=run)
+firstBtn=Button(window, text="숫자를 입력", command=run)  #-------하단 버튼 생성------------
 secondBtn=Button(window, text="게임을 다시 실행", command=reset)
 
 firstBtn.grid(row=5, column=0)
@@ -120,18 +120,18 @@ window.mainloop()
 def changedInch():
     inch=int(e.get())
     centi=inch*2.54 # 인치 -> 센티미터
-    forthLabel.configure(text=str(centi)+"센티미터")
+    forthLabel.configure(text=str(centi)+"센티미터") #변환된 수를 표
 
     
 from tkinter import*
 window=Tk()
-firstLabel=Label(window,text="인치를 센티미터로 변환하는 프로그램:")
+firstLabel=Label(window,text="인치를 센티미터로 변환하는 프로그램:") #-------상단 라벨 생성--------------
 firstLabel.grid(row=0, column=1, columnspan=2)
 
 secondLabel=Label(window,text="인치를 입력하시오:")
 secondLabel.grid(row=1, column=0)
 
-e=Entry()
+e=Entry() #------입력부분 생성------------
 e.grid(row=1, column=1)
 
 thirdLabel=Label(window, text="변환 결과:")
@@ -141,7 +141,36 @@ forthLabel=Label(window, text="0센티미터")
 
 forthLabel.grid(row=2,column=1)
 
-changeBtn=Button(window,text="변환!", command=changedInch)
+changeBtn=Button(window,text="변환!", command=changedInch) #-------하단 버튼 생성------------
 changeBtn.grid(row=3, column=1)
 
 window.mainloop()
+
+5번
+from tkinter import*
+window=Tk()
+l1=Label(window,text="이름") #-------상단 라벨 생성--------------
+l2=Label(window,text="직업")
+l3=Label(window,text="국적")
+
+l1.grid(row=0, column=0) # 격자배열을 통해 1행에 배치
+l2.grid(row=1,column=0)
+l3.grid(row=2,column=0)
+
+e1=Entry(window) #------입력부분 생성------------
+e2=Entry(window)
+e3=Entry(window)
+ 
+e1.grid(row=0,column=1) # 격자배열을 통해 2행에 배치
+e2.grid(row=1, column=1)
+e3.grid(row=2,column=1)
+
+b1=Button(window,text="Show") #-------하단 버튼 생성------------
+b2=Button(window,text="Quit")
+
+b1.grid(row=3,column=0) # 격자배열을 통해 3열에 배치
+b2.grid(row=3,column=1)
+
+window.mainloop()
+
+6번
